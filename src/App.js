@@ -17,9 +17,11 @@ function App() {
     setImage(URL.createObjectURL(event.target.files[0]));
   }
 
-  const handleCompleteCrop = (c) => {
+  const handleCompleteCrop = (c, p) => {
     setCompletedCrop(c);
-    handleClick();
+
+    if (c.width > 1 || c.height > 1)
+      handleClick();
   }
   
   const handleClick = () => {
